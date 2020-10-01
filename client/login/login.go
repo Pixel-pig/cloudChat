@@ -1,8 +1,8 @@
 package login
 
 import (
+	"cloudChat/client/utils"
 	"cloudChat/common/message"
-	"cloudChat/common/utils"
 	"encoding/binary"
 	"encoding/json"
 	"fmt"
