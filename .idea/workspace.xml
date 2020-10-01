@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31a27dfa-9471-47c0-a708-8685fdc23ce2" name="Default Changelist" comment="" />
+    <list default="true" id="ea757478-6159-41a3-9bef-97673c5a7636" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/utils/utils.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/cloudChat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cloudChat.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login/login.go" beforeDir="false" afterPath="$PROJECT_DIR$/client/login/login.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/client/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/utils/utils.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/message/message.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/message/message.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/main.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Go File" />
-      </list>
-    </option>
-  </component>
   <component name="GOROOT" path="D:\program\go" />
-  <component name="ProjectId" id="1i7WJMq98SVM41ajfLLM8EQuAvV" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1i8saa0rJgBJKNQ9GcVMzNH1ZD2" />
   <component name="ProjectViewState">
     <option name="foldersAlwaysOnTop" value="false" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -23,74 +31,52 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\GOproject\src\canl\client\utils" />
-      <recent name="D:\GOproject\src\canl\client" />
-      <recent name="D:\GOproject\src\canl\client\login" />
-      <recent name="D:\GOproject\src\canl" />
-      <recent name="D:\GOproject\src\canl\common\message" />
+      <recent name="D:\GOproject\src\cloudChat\common" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build canl/server">
-    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
-      <module name="cloudChat" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <go_parameters value="-i" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/" />
-      <package value="canl" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build canl" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="cloudChat" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/main.go" />
-      <package value="canl" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build canl/client" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Build.go build cloudChat/server (1)">
+    <configuration name="go build cloudChat/client" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="cloudChat" />
       <working_directory value="$PROJECT_DIR$/" />
       <kind value="PACKAGE" />
       <filePath value="$PROJECT_DIR$/client/main.go" />
-      <package value="canl/client" />
+      <package value="cloudChat/client" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build canl/server" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build cloudChat/server (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="cloudChat" />
       <working_directory value="$PROJECT_DIR$/" />
       <kind value="PACKAGE" />
       <filePath value="$PROJECT_DIR$/server/main.go" />
-      <package value="canl/server" />
+      <package value="cloudChat/server" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+    <configuration name="go build cloudChat/server" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="cloudChat" />
       <working_directory value="$PROJECT_DIR$/" />
-      <go_parameters value="-i" />
-      <framework value="gotest" />
       <kind value="DIRECTORY" />
-      <package value="canl" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/server/main.go" />
+      <package value="cloudChat/server" />
+      <directory value="$PROJECT_DIR$" />
+      <output_directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build canl/client" />
-        <item itemvalue="Go Build.go build canl/server" />
-        <item itemvalue="Go Build.go build canl" />
+        <item itemvalue="Go Build.go build cloudChat/server (1)" />
+        <item itemvalue="Go Build.go build cloudChat/client" />
+        <item itemvalue="Go Build.go build cloudChat/server" />
       </list>
     </recent_temporary>
   </component>
@@ -98,30 +84,42 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="724" height="140" key="GridCell.Tab.0.bottom" timestamp="1601289229617">
+    <state x="495" y="81" key="#go_build_cloudChat/server" timestamp="1601300687593">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="724" height="140" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601289229617" />
-    <state width="724" height="140" key="GridCell.Tab.0.center" timestamp="1601289229617">
+    <state x="495" y="81" key="#go_build_cloudChat/server/0.0.1536.824@0.0.1536.824" timestamp="1601300687593" />
+    <state x="548" y="170" key="FileChooserDialogImpl" timestamp="1601364577923">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="724" height="140" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601289229617" />
-    <state width="724" height="140" key="GridCell.Tab.0.left" timestamp="1601289229617">
+    <state x="548" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601364577923" />
+    <state width="724" height="207" key="GridCell.Tab.0.bottom" timestamp="1601525030400">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="724" height="140" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601289229617" />
-    <state width="724" height="140" key="GridCell.Tab.0.right" timestamp="1601289229617">
+    <state width="724" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601525030400" />
+    <state width="724" height="207" key="GridCell.Tab.0.center" timestamp="1601525030400">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="724" height="140" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601289229617" />
+    <state width="724" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601525030400" />
+    <state width="724" height="207" key="GridCell.Tab.0.left" timestamp="1601525030400">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="724" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601525030400" />
+    <state width="724" height="207" key="GridCell.Tab.0.right" timestamp="1601525030400">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="724" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601525030400" />
+    <state x="874" y="157" width="540" height="524" key="StructurePopup" timestamp="1601521305880">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="874" y="157" width="540" height="524" key="StructurePopup/0.0.1536.824@0.0.1536.824" timestamp="1601521305880" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/../cloudChat/client/main.go</url>
-          <line>2</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/server/main.go</url>
+          <line>113</line>
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

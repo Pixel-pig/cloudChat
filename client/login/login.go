@@ -2,11 +2,11 @@ package login
 
 import (
 	"cloudChat/common/message"
+	"cloudChat/common/utils"
 	"encoding/binary"
 	"encoding/json"
 	"fmt"
 	"net"
-	"time"
 )
 
 //Login函数，完成登陆
@@ -72,8 +72,21 @@ func Login (userId int,pwd string ) (err error) {
 		return
 	}
 
-	//休眠
-	time.Sleep(2 * time.Second)
-	fmt.Println("休眠了2s....")
+	//处理服务端返回的消息
+	mes, err = utils.ReadPkg(conn)
+	if err != nil {
+		fmt.Println("utils.ReadPkg(conn) err = ", err)
+		return
+	}
+	//将mes.Data 反序列化 成LoginResMes
+	var loginResMes message.LoginResMes
+	err = json.Unmarshal([]byte(mes.Data), &loginResMes)
+	if loginResMes.Code == 200 {
+		fmt.Println("登录成功")
+	} else if loginResMes.Code == 500 {
+		fmt.Println(loginResMes.Error)
+		return
+	}
+
 	return
 }
