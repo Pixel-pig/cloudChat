@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea757478-6159-41a3-9bef-97673c5a7636" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/main/processor.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/process/smsProcess.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/process/userProcess.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/utils/utils.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/process/server.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/process/smsProcess.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/process/userProcess.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/login/login.go" beforeDir="false" afterPath="$PROJECT_DIR$/client/login/login.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/utils/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/client/utils/utils.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/main/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/login/login.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/client/main/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/utils/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/client/utils/utils.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,19 +44,29 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GOproject\src\cloudChat\client\process" />
+      <recent name="D:\GOproject\src\cloudChat\client\main" />
       <recent name="D:\GOproject\src\cloudChat\client" />
       <recent name="D:\GOproject\src\cloudChat\server\main" />
       <recent name="D:\GOproject\src\cloudChat\server" />
-      <recent name="D:\GOproject\src\cloudChat\common" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build cloudChat/client">
+  <component name="RunManager" selected="Go Build.go build cloudChat/server/main">
     <configuration name="go build cloudChat/client" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="cloudChat" />
       <working_directory value="$PROJECT_DIR$/" />
       <kind value="PACKAGE" />
       <filePath value="$PROJECT_DIR$/client/main.go" />
       <package value="cloudChat/client" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build cloudChat/client/main" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="cloudChat" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/client/main/main.go" />
+      <package value="cloudChat/client/main" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
@@ -91,6 +100,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build cloudChat/client/main" />
         <item itemvalue="Go Build.go build cloudChat/server/main" />
         <item itemvalue="Go Build.go build cloudChat/client" />
         <item itemvalue="Go Build.go build cloudChat/server (1)" />
@@ -106,26 +116,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="495" y="81" key="#go_build_cloudChat/server/0.0.1536.824@0.0.1536.824" timestamp="1601300687593" />
+    <state x="861" y="93" width="582" height="638" key="DiffContextDialog" timestamp="1601538845908">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="861" y="93" width="582" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1601538845908" />
     <state x="548" y="170" key="FileChooserDialogImpl" timestamp="1601364577923">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601364577923" />
-    <state width="724" height="92" key="GridCell.Tab.0.bottom" timestamp="1601535306664">
+    <state width="725" height="163" key="GridCell.Tab.0.bottom" timestamp="1601541329804">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="724" height="92" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601535306664" />
-    <state width="724" height="92" key="GridCell.Tab.0.center" timestamp="1601535306663">
+    <state width="725" height="163" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601541329804" />
+    <state width="725" height="163" key="GridCell.Tab.0.center" timestamp="1601541329804">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="724" height="92" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601535306663" />
-    <state width="724" height="92" key="GridCell.Tab.0.left" timestamp="1601535306663">
+    <state width="725" height="163" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601541329804" />
+    <state width="725" height="163" key="GridCell.Tab.0.left" timestamp="1601541329804">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="724" height="92" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601535306663" />
-    <state width="724" height="92" key="GridCell.Tab.0.right" timestamp="1601535306663">
+    <state width="725" height="163" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601541329804" />
+    <state width="725" height="163" key="GridCell.Tab.0.right" timestamp="1601541329804">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="724" height="92" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601535306663" />
+    <state width="725" height="163" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601541329804" />
     <state x="874" y="157" width="540" height="524" key="StructurePopup" timestamp="1601521305880">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

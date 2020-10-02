@@ -1,7 +1,7 @@
 package main
 
 import (
-	"cloudChat/client/login"
+	"cloudChat/client/process"
 	"fmt"
 	"os"
 )
@@ -26,11 +26,20 @@ func main() {
 		fmt.Println("\t\t\t 请选择(1-3):")
 		fmt.Println("----------------------------------------------")
 
-		fmt.Scanf("%d\n",&key)//获取用户的选择
+		fmt.Scanf("%d\n", &key) //获取用户的选择
 
 		switch {
 		case key == 1:
 			fmt.Println("登陆聊天室")
+			fmt.Println("请输入用户id")
+			fmt.Scanf("%d\n", &userId)
+			fmt.Println("请输入用户密码")
+			fmt.Scanf("%v\n", &pwd)
+			//完成登陆
+			//创建一个 user 实例获取用户输入的密码和用户名
+			user := &process.UserProcess{}
+			user.Login(userId, pwd)
+
 			loop = false
 		case key == 2:
 			fmt.Println("注册用户")
@@ -41,25 +50,5 @@ func main() {
 			fmt.Println("你的输入有误，请重新输入")
 		}
 
-	 	//根据用户输入，显示用户信息
-		if key == 1 {
-			//说明用户要登陆
-			fmt.Println("请输入用户id")
-			fmt.Scanf("%d\n",&userId)
-			fmt.Println("请输入用户密码")
-			fmt.Scanf("%v\n",&pwd)
-			//先把登陆的函数，写到另一个文件，login.go
-			login.Login(userId, pwd)
-			//if err != nil {
-			//	fmt.Println("登陆失败")
-			//} else {
-			//	fmt.Println("登陆成功")
-			//}
-		} else if key == 2{
-			fmt.Println("进行用户注册")
-		}
-
 	}
-
-
 }

@@ -1,4 +1,4 @@
-package login
+package process
 
 import (
 	"cloudChat/client/utils"
@@ -9,8 +9,13 @@ import (
 	"net"
 )
 
+//给 UserProcess 结构体绑定一些字段和方法
+type UserProcess struct {
+
+}
+
 //Login函数，完成登陆
-func Login (userId int,pwd string ) (err error) {
+func (this *UserProcess) Login(userId int, pwd string) (err error) {
 	//1.a:链接服务器
 	conn, err := net.Dial("tcp", "localhost:8889")
 	if err != nil {
@@ -20,11 +25,9 @@ func Login (userId int,pwd string ) (err error) {
 	//1.b:延时关闭链接
 	defer conn.Close()
 
-
 	//2.准备通过conn发送消息个服务器
-	var mes message.Message//定义message结构体
+	var mes message.Message //定义message结构体
 	mes.Type = message.LoginMesType
-
 
 	//3.a:创建LoginMes结构体
 	var loginMes message.LoginMes
@@ -39,7 +42,6 @@ func Login (userId int,pwd string ) (err error) {
 	//3.c:把data信息 赋给 mes.Data字段
 	mes.Data = string(data)
 
-
 	//4.将mes结构体序列化(这个data既是我们要发送的消息)
 	data, err = json.Marshal(mes)
 	if err != nil {
@@ -47,10 +49,9 @@ func Login (userId int,pwd string ) (err error) {
 		return
 	}
 
-
 	/**
- *5.计算data数据的长度，并将数据发送个服务端（避免丢包）
- */
+	 *5.计算data数据的长度，并将数据发送个服务端（避免丢包）
+	 */
 	//5.a:先获取data的长度(int 类型) -> 转为切片
 	//错误类型：var len := len(data)
 	var pkgLen uint32
@@ -64,7 +65,6 @@ func Login (userId int,pwd string ) (err error) {
 		return
 	}
 
-
 	//6.发送Mes(包含LoginMes)消息本身
 	_, err = conn.Write(data)
 	if err != nil {
@@ -73,7 +73,11 @@ func Login (userId int,pwd string ) (err error) {
 	}
 
 	//处理服务端返回的消息
-	mes, err = utils.ReadPkg(conn)
+	//创建一个 transfer 链接
+	transfer := &utils.Transfer{
+		Conn:conn,
+	}
+	mes, err = transfer.ReadPkg()
 	if err != nil {
 		fmt.Println("utils.ReadPkg(conn) err = ", err)
 		return
@@ -82,7 +86,14 @@ func Login (userId int,pwd string ) (err error) {
 	var loginResMes message.LoginResMes
 	err = json.Unmarshal([]byte(mes.Data), &loginResMes)
 	if loginResMes.Code == 200 {
-		fmt.Println("登录成功")
+		//这里我们还需要在客户端启动一个协程
+		//该协程保持和服务器端的通讯，如果服务器有数据推送给客户端，接收并显示在客户端
+		go processServerMes(conn)
+
+		//1. 循环显示我们登陆列表
+		for {
+			ShowMenu()
+		}
 	} else if loginResMes.Code == 500 {
 		fmt.Println(loginResMes.Error)
 		return
