@@ -9,6 +9,7 @@ import (
 //定义两个变量，表示用户id和用户的密码
 var userId int
 var pwd string
+var userName string
 
 //接收用户的选择
 var key int
@@ -34,7 +35,7 @@ func main() {
 			fmt.Println("请输入用户id")
 			fmt.Scanf("%d\n", &userId)
 			fmt.Println("请输入用户密码")
-			fmt.Scanf("%v\n", &pwd)
+			fmt.Scanf("%s\n", &pwd)
 			//完成登陆
 			//创建一个 user 实例获取用户输入的密码和用户名
 			user := &process.UserProcess{}
@@ -43,6 +44,16 @@ func main() {
 			loop = false
 		case key == 2:
 			fmt.Println("注册用户")
+			fmt.Println("请输入用户的id")
+			fmt.Scanf("%d\n", &userId)
+			fmt.Println("请输入用户密码")
+			fmt.Scanf("%s\n", &pwd)
+			fmt.Println("请输入用户的名字(昵称)")
+			fmt.Scanf("%s\n", &userName)
+			//完成注册
+			//创建一个 user 实例创建新用户
+			user := &process.UserProcess{}
+			user.Register(userId, pwd, userName)
 		case key == 3:
 			fmt.Println("退出系统")
 			os.Exit(0)
