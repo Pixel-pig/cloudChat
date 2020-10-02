@@ -2,11 +2,13 @@ package process
 
 import (
 	"cloudChat/common/message"
+	"cloudChat/server/model"
 	"cloudChat/server/utils"
 	"encoding/json"
 	"fmt"
 	"net"
 )
+
 //将这些方法关联到 UserProcess（用户处理）结构体中
 type UserProcess struct {
 	Conn net.Conn //从总控获取
@@ -34,13 +36,25 @@ func (this *UserProcess) ServerProcessLogin(mes *message.Message) (err error) {
 	var loginResMes message.LoginResMes
 
 	//2.3 验证（loginMes）并返回
-	if loginMes.UserId == 100 && loginMes.UserPwd == "123456" {
+	//(使用MyUserDao.Login方法验证redis中的数据与用户输入的数据是否一致)
+	user, err := model.MyUserDao.Login(loginMes.UserId, loginMes.UserPwd)
+	if err != nil {
+		//登录不合法
+		if err == model.ERROR_USER_NOTEXISTS {
+			loginResMes.Code = 500 //用户不存在
+			loginResMes.Error = err.Error()
+		} else  if err == model.ERROR_USER_PWD {
+			loginResMes.Code = 300 //密码不正确
+			loginResMes.Error = err.Error()
+		} else {
+			loginResMes.Code = 505 //未知错误
+			loginResMes.Error = "服务器内部错误......"
+		}
+
+	} else {
 		//登录合法
 		loginResMes.Code = 200
-	} else {
-		//登录不合法
-		loginResMes.Code = 500
-		loginResMes.Error = "该用户不存在，请注册后再使用"
+		fmt.Println(user, " 登录成功")
 	}
 
 	//2.4 将LoginResMes 序列化
