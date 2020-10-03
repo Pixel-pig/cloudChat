@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea757478-6159-41a3-9bef-97673c5a7636" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/common/message/user.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/client/main/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/process/userProcess.go" beforeDir="false" afterPath="$PROJECT_DIR$/client/process/userProcess.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/message/message.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/message/message.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/main/processor.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/main/processor.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/model/userDao.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/model/userDao.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/process/userProcess.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/process/userProcess.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +51,7 @@
       <recent name="D:\GOproject\src\cloudChat\server\main" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build cloudChat/client/main">
+  <component name="RunManager" selected="Go Build.go build cloudChat/server/main">
     <configuration name="go build cloudChat/client" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="cloudChat" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -125,22 +124,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601364577923" />
-    <state width="726" height="162" key="GridCell.Tab.0.bottom" timestamp="1601629847840">
+    <state width="723" height="163" key="GridCell.Tab.0.bottom" timestamp="1601705552349">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="726" height="162" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601629847840" />
-    <state width="726" height="162" key="GridCell.Tab.0.center" timestamp="1601629847840">
+    <state width="723" height="163" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601705552349" />
+    <state width="723" height="163" key="GridCell.Tab.0.center" timestamp="1601705552349">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="726" height="162" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601629847840" />
-    <state width="726" height="162" key="GridCell.Tab.0.left" timestamp="1601629847840">
+    <state width="723" height="163" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601705552349" />
+    <state width="723" height="163" key="GridCell.Tab.0.left" timestamp="1601705552349">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="726" height="162" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601629847840" />
-    <state width="726" height="162" key="GridCell.Tab.0.right" timestamp="1601629847840">
+    <state width="723" height="163" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601705552349" />
+    <state width="723" height="163" key="GridCell.Tab.0.right" timestamp="1601705552349">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="726" height="162" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601629847840" />
+    <state width="723" height="163" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601705552349" />
     <state x="874" y="157" width="540" height="524" key="StructurePopup" timestamp="1601521305880">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

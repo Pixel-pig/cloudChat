@@ -1,3 +1,4 @@
+//（user的控制器）
 package process
 
 import (
@@ -43,7 +44,7 @@ func (this *UserProcess) ServerProcessLogin(mes *message.Message) (err error) {
 		if err == model.ERROR_USER_NOTEXISTS {
 			loginResMes.Code = 500 //用户不存在
 			loginResMes.Error = err.Error()
-		} else  if err == model.ERROR_USER_PWD {
+		} else if err == model.ERROR_USER_PWD {
 			loginResMes.Code = 300 //密码不正确
 			loginResMes.Error = err.Error()
 		} else {
@@ -75,6 +76,66 @@ func (this *UserProcess) ServerProcessLogin(mes *message.Message) (err error) {
 	}
 
 	//2.7 发送resMes序列化的数据 data (将其封装到writerPkg函数中)
+	//创建Transfer实例，使用Transfer的方法
+	transfer := &utils.Transfer{
+		Conn: this.Conn,
+	}
+	err = transfer.WritePkg(data)
+	if err != nil {
+		fmt.Println("writerPkg(conn, data) err = ", err)
+		return
+	}
+	return
+}
+
+//编写一个函数serverProcessRegister函数，专门处理注册请求
+func (this *UserProcess) ServerProcessRegister(mes *message.Message) (err error) {
+	//1.先从mes中取出mes.Data，并直接反序列化成registerMes
+	var registerMes message.RegisterMes
+	err = json.Unmarshal([]byte(mes.Data), &registerMes)
+	if err != nil {
+		fmt.Println("json.Unmarshal err = ", err)
+		return
+	}
+
+	//2.1 先声明一个resMes用于返回客户端
+	var resMes message.Message
+	resMes.Type = message.RegisterResMesType
+	//2.2 再声明一个 RegisterMes,并完成赋值
+	var registerResMes message.RegisterResMes
+
+	//3. 去 redis 数据中完成注册
+	err = model.MyUserDao.Register(&registerMes.User)
+	if err != nil {
+		if err == model.ERROR_USER_TEXISTS {
+			registerResMes.Code = 505 //用户已被占用
+			registerResMes.Error = model.ERROR_USER_TEXISTS.Error()
+		} else {
+			registerResMes.Code = 506 //注册时发生未知错误
+			registerResMes.Error = "注册时发生未知错误..."
+		}
+	} else {
+		registerResMes.Code = 200 //注册成功
+	}
+
+	//4. 将 registerResMes 序列化
+	data, err := json.Marshal(registerResMes)
+	if err != nil {
+		fmt.Println("json.Marshal err = ", err)
+		return
+	}
+
+	//5 将 registerResMes 序列化的data 赋值给resMes
+	resMes.Data = string(data)
+
+	//6. 对resMes 序列化 准备发送
+	data, err = json.Marshal(resMes)
+	if err != nil {
+		fmt.Println("json.Marshal(resMes) err = ", err)
+		return
+	}
+
+	//7. 发送resMes序列化的数据 data (将其封装到writerPkg函数中)
 	//创建Transfer实例，使用Transfer的方法
 	transfer := &utils.Transfer{
 		Conn: this.Conn,

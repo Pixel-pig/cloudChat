@@ -1,6 +1,7 @@
 package model
 
 import (
+	"cloudChat/common/message"
 	"encoding/json"
 	"fmt"
 	"github.com/garyburd/redigo/redis"
@@ -66,6 +67,35 @@ func NewUserDao(pool *redis.Pool) (userDao *UserDao) {
 	//创建一个 UserDao 实例
 	userDao = &UserDao{
 		pool: pool,
+	}
+
+	return
+}
+
+//4. 完成注册功能
+func (this *UserDao) Register(user *message.User) (err error) {
+	//先从 UserDao 的连接池中取出一根连接
+	conn := this.pool.Get()
+	defer conn.Close()
+
+	//判断用户是否存在
+	//获取user实例，既获取user存在redis中的基本信息
+	//若没有错误则说明，用户已存在，有错误则说明用户还未创建
+	_, err = this.getUserById(conn, user.UserID)
+	if err == nil {
+		err = ERROR_USER_TEXISTS
+		return
+	}
+	//这是，id在redis中还是没有，这是可以将user序列化再入库
+	data, err := json.Marshal(user)
+	if err != nil {
+		return
+	}
+	//入库
+	_, err = conn.Do("HSet","users", user.UserID, string(data))
+	if err != nil {
+		fmt.Println("保存注册用户 err = ", err)
+		return
 	}
 
 	return

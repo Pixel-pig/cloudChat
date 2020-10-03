@@ -26,14 +26,19 @@ func (this *Processor) serverProcessMes(mes *message.Message) (err error) {
 		}
 		err = user.ServerProcessLogin(mes)
 	case message.RegisterMesType:
-	//处理注册的逻辑
+		//处理注册的逻辑
+		//创建一个UserProcess实例
+		user := &process2.UserProcess{
+			Conn: this.Conn,
+		}
+		err = user.ServerProcessRegister(mes)
 	default:
 		fmt.Println("消息类型不存在")
 	}
 	return
 }
 
-func (this *Processor) Process3 () (err error) {
+func (this *Processor) Process3() (err error) {
 	//循环的读取客户端发送的信息
 	for {
 		//这里我们将读取数据包，直接封装成一个函数readPkg()，返回Message，err
